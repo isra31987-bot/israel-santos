@@ -66,20 +66,46 @@ export default function ContactForm({
     }
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          message: message.trim(),
-          subject: emailSubject,
-        }),
-      });
+      // Web3Forms free plan only accepts browser (client) requests.
+      // The access key is public by design — see https://web3forms.com
+      const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
-      const data = (await res.json()) as { ok?: boolean; error?: string };
+      const res = web3Key
+        ? await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              access_key: web3Key,
+              name: name.trim(),
+              email: email.trim(),
+              message: message.trim(),
+              subject: emailSubject,
+              from_name: "Portfolio Israel Santos",
+              botcheck: false,
+            }),
+          })
+        : await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: name.trim(),
+              email: email.trim(),
+              message: message.trim(),
+              subject: emailSubject,
+            }),
+          });
 
-      if (!res.ok || !data.ok) {
+      const data = (await res.json()) as {
+        ok?: boolean;
+        success?: boolean;
+        error?: string;
+      };
+
+      // Web3Forms returns { success }; our /api/contact returns { ok }
+      if (!res.ok || !(data.ok || data.success)) {
         setStatus("error");
         setErrorKey(data.error ?? "send_failed");
         return;

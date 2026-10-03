@@ -49,21 +49,11 @@ export async function POST(request: Request) {
   ].join("\n");
 
   try {
+    // Prefer client-side Web3Forms (NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY).
+    // This route is the Resend fallback (server-side API key).
     if (process.env.RESEND_API_KEY) {
       await sendWithResend({ toEmail, email, name, subject, text, message });
       return NextResponse.json({ ok: true, provider: "resend" });
-    }
-
-    if (process.env.WEB3FORMS_ACCESS_KEY) {
-      await sendWithWeb3Forms({
-        accessKey: process.env.WEB3FORMS_ACCESS_KEY,
-        toEmail,
-        email,
-        name,
-        subject,
-        message: text,
-      });
-      return NextResponse.json({ ok: true, provider: "web3forms" });
     }
 
     return NextResponse.json(
@@ -116,43 +106,6 @@ async function sendWithResend({
   if (!res.ok) {
     const detail = await res.text();
     throw new Error(`Resend failed: ${res.status} ${detail}`);
-  }
-}
-
-async function sendWithWeb3Forms({
-  accessKey,
-  toEmail,
-  email,
-  name,
-  subject,
-  message,
-}: {
-  accessKey: string;
-  toEmail: string;
-  email: string;
-  name: string;
-  subject: string;
-  message: string;
-}) {
-  const res = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      access_key: accessKey,
-      subject,
-      from_name: name,
-      email,
-      message,
-      to: toEmail,
-    }),
-  });
-
-  const data = (await res.json()) as { success?: boolean; message?: string };
-  if (!res.ok || !data.success) {
-    throw new Error(`Web3Forms failed: ${data.message ?? res.status}`);
   }
 }
 
