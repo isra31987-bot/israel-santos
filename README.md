@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Israel Santos — Business × Technology
 
-## Getting Started
+Ecosistema de candidatura. No es un CV de programador: es cómo un perfil de negocio + tecnología se presenta a empresas (Business Analyst, transformación digital, automatización).
 
-First, run the development server:
+**Convierto problemas empresariales en soluciones digitales.**
+
+## Las tres piezas
+
+1. **Web** — pieza que se experimenta. Consultoría + producto. En 30 segundos se entiende quién eres.
+2. **PDF de 1–2 páginas** — para ATS y envíos. Misma historia que la web. Llega cuando la marca visual está cerrada.
+3. **Vídeo Seedance 2.5 (45–60 s)** — no es una presentación personal. Muestra el método: observar → analizar → diseñar → automatizar → construir.
+
+CV, web, vídeo y LinkedIn cuentan lo mismo.
+
+## Posicionamiento
+
+**Business & Digital Transformation Analyst**
+Business Analysis · Process Optimization · AI & Automation · Digital Solutions
+
+La programación (asistida con IA) es una herramienta, no el titular.
+
+> I understand the business. I find the friction. I build the solution.
+
+## Cómo se construye
+
+Cada milestone se revisa en el navegador antes del siguiente. Si un dato no está confirmado, queda `[POR CONFIRMAR]`. Nunca se inventan clientes, cifras ni tecnologías.
+
+| Milestone | Qué entrega |
+|-----------|-------------|
+| **1** | Design system + Navbar + Footer + rutas vacías |
+| 2 | Home completa |
+| 3 | Case studies (4 proyectos) |
+| **4** | About, Contact y PDF |
+| **5** | Vídeo Seedance, SEO y deploy |
+| **6** | Cierre Home, Experiments, OG image |
+| **7** | Analytics, cookies, privacidad, pulido final |
+| **9** | Personalización empresas *(al final)* |
+
+## Arrancar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Desplegar en Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Sube el repo a GitHub (o conéctalo directamente desde Vercel).
+2. En [vercel.com](https://vercel.com) → **Add New Project** → importa el repositorio.
+3. Framework: **Next.js** (detectado automáticamente). Build: `npm run build`. Output: default.
+4. En **Environment Variables**, añade (copia `.env.example`):
+   ```
+   NEXT_PUBLIC_SITE_URL=https://tu-dominio.vercel.app
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+   NEXT_PUBLIC_CLARITY_ID=xxxxxxxxxx
+   WEB3FORMS_ACCESS_KEY=tu-access-key
+   CONTACT_TO_EMAIL=isra31987@gmail.com
+   ```
+   GA4 y Clarity son opcionales. Si no hay IDs, no aparece el banner de cookies.
+   Para el formulario de contacto: crea una clave gratis en [web3forms.com](https://web3forms.com) (o usa Resend) y añádela en Vercel. Sin clave, el canal Email devolverá error de configuración; WhatsApp sigue funcionando.
+   (Copia la URL final que te asigne Vercel tras el primer deploy.)
+5. Deploy. Comprueba `/sitemap.xml` y `/robots.txt` en producción.
 
-## Learn More
+### Formulario de contacto (local)
 
-To learn more about Next.js, take a look at the following resources:
+1. Copia `.env.example` → `.env.local`
+2. Entra en [web3forms.com](https://web3forms.com), genera un Access Key con tu email
+3. Pega la clave en `WEB3FORMS_ACCESS_KEY=`
+4. Reinicia `npm run dev` y prueba enviar desde `/contact`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+WhatsApp abre la app/web de WhatsApp con el mensaje listo (así funciona el contacto WhatsApp en webs personales; no requiere API de negocio).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Tras el deploy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Pega la URL del vídeo Seedance en `data/video.ts` → `url`.
+- Exporta el CV a PDF y colócalo en `public/cv.pdf` (los CTAs «Descargar CV» apuntan ahí; la versión web imprimible sigue en `/cv`).
+- LinkedIn y GitHub quedan `[POR CONFIRMAR]` hasta que los confirmes.
