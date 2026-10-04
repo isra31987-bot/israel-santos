@@ -11,6 +11,29 @@ export const logicalcCase: CaseStudyData = {
   technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
   status: "PRODUCTO FUNCIONAL / MVP",
 
+  screenshots: [
+    {
+      src: "/work/logicalc/01-calculadora.jpg",
+      alt: "Calculadora de rentabilidad de LogiCalc con datos del viaje",
+      caption: "Calcula la rentabilidad de un servicio de manera instantánea",
+    },
+    {
+      src: "/work/logicalc/02-beneficios.jpg",
+      alt: "Sección de beneficios de LogiCalc para transportistas",
+      caption: "Diseñado para ayudarte en tu día a día",
+    },
+    {
+      src: "/work/logicalc/03-insights.jpg",
+      alt: "Insights del periodo en LogiCalc con KPIs y desglose de gastos",
+      caption: "Insights que te ayudan a tomar decisiones",
+    },
+    {
+      src: "/work/logicalc/04-informes.png",
+      alt: "Informe de viajes exportado desde LogiCalc",
+      caption: "Exporta tus informes y compártelos fácilmente",
+    },
+  ],
+
   problem: {
     label: "EL PROBLEMA",
     heading: "Un precio sobre la mesa. Sin respuesta clara.",

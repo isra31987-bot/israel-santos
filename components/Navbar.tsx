@@ -3,9 +3,10 @@
 import { useEffect, useId, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, MessageCircle, X } from "lucide-react";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 import TrackLink from "@/components/TrackLink";
+import { openRecruitmentChat } from "@/components/RecruitmentChat";
 import { useDictionary } from "@/components/DictionaryProvider";
 import { CV_PDF_HREF } from "@/data/site";
 
@@ -48,13 +49,24 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 isolate border-b border-line bg-bg/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
-        <Link
-          href="/"
-          className="min-w-0 shrink truncate text-sm font-medium tracking-wide text-ink"
-          onClick={closeMenu}
-        >
-          {dict.profile.name}
-        </Link>
+        <div className="flex min-w-0 items-center gap-2">
+          <Link
+            href="/"
+            className="min-w-0 shrink truncate text-sm font-medium tracking-wide text-ink"
+            onClick={closeMenu}
+          >
+            {dict.profile.name}
+          </Link>
+          {/* Móvil: solo bocadillo junto al nombre (abre el chatbot) */}
+          <button
+            type="button"
+            className="recruit-chat-nav-icon md:hidden"
+            onClick={openRecruitmentChat}
+            aria-label={dict.chatbot.open}
+          >
+            <MessageCircle strokeWidth={1.75} aria-hidden="true" />
+          </button>
+        </div>
 
         <div className="hidden items-center gap-8 md:flex">
           <nav className="flex items-center gap-6" aria-label={dict.navbar.navAria}>

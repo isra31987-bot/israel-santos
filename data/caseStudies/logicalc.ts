@@ -13,6 +13,29 @@ export const logicalcCase: CaseStudyData = {
   technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
   status: "FUNCTIONAL PRODUCT / MVP",
 
+  screenshots: [
+    {
+      src: "/work/logicalc/01-calculadora.jpg",
+      alt: "LogiCalc profitability calculator with trip inputs and results",
+      caption: "Calculate the profitability of a job instantly",
+    },
+    {
+      src: "/work/logicalc/02-beneficios.jpg",
+      alt: "LogiCalc benefits section for carriers and logistics companies",
+      caption: "Designed to help you in your day-to-day work",
+    },
+    {
+      src: "/work/logicalc/03-insights.jpg",
+      alt: "LogiCalc period insights with costs breakdown and KPIs",
+      caption: "Insights that help you make decisions",
+    },
+    {
+      src: "/work/logicalc/04-informes.png",
+      alt: "LogiCalc trip report export ready to share",
+      caption: "Export your reports and share them easily",
+    },
+  ],
+
   problem: {
     label: "THE PROBLEM",
     heading: "A price on the table. No clear answer.",

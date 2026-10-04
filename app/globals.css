@@ -3867,11 +3867,65 @@ a.contact-value:hover {
   gap: 0.75rem;
 }
 
+/* Icono en navbar (móvil): brillo que cambia de intensidad */
+.recruit-chat-nav-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--amber);
+  cursor: pointer;
+  animation: recruit-chat-glow 2s ease-in-out infinite;
+}
+
+.recruit-chat-nav-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.recruit-chat-nav-icon:hover {
+  color: color-mix(in srgb, var(--amber) 80%, #fff);
+}
+
+@keyframes recruit-chat-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--amber) 55%, transparent));
+  }
+}
+
 .recruit-chat-launch {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 0.45rem;
+}
+
+/* Escritorio: lanzador flotante. Móvil: solo icono del navbar */
+@media (min-width: 768px) {
+  .recruit-chat-launch {
+    display: flex;
+  }
+}
+
+/* Si el panel está abierto en móvil, no mostrar "Cerrar" flotante */
+.recruit-chat:has(.recruit-chat-panel) .recruit-chat-launch {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .recruit-chat:has(.recruit-chat-panel) .recruit-chat-launch {
+    display: flex;
+  }
 }
 
 .recruit-chat-bounce {
@@ -3924,8 +3978,25 @@ a.contact-value:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .recruit-chat-bounce {
+  .recruit-chat-bounce,
+  .recruit-chat-nav-icon {
     animation: none;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .recruit-chat {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    align-items: stretch;
+  }
+
+  .recruit-chat-panel {
+    width: 100%;
+    max-width: none;
   }
 }
 

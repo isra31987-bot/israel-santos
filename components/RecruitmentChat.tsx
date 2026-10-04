@@ -7,6 +7,13 @@ import { useDictionary } from "@/components/DictionaryProvider";
 type Role = "user" | "model";
 type Msg = { role: Role; text: string };
 
+export const RECRUIT_CHAT_OPEN_EVENT = "recruit-chat-open";
+
+/** Abre el panel del chat (p. ej. desde el icono del navbar en móvil). */
+export function openRecruitmentChat() {
+  window.dispatchEvent(new Event(RECRUIT_CHAT_OPEN_EVENT));
+}
+
 export default function RecruitmentChat() {
   const { dict, locale } = useDictionary();
   const t = dict.chatbot;
@@ -16,6 +23,13 @@ export default function RecruitmentChat() {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [error, setError] = useState<string | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
+
+  // Escucha el icono del navbar (móvil)
+  useEffect(() => {
+    const onOpen = () => setOpen(true);
+    window.addEventListener(RECRUIT_CHAT_OPEN_EVENT, onOpen);
+    return () => window.removeEventListener(RECRUIT_CHAT_OPEN_EVENT, onOpen);
+  }, []);
 
   // Scroll al último mensaje
   useEffect(() => {
@@ -94,29 +108,7 @@ export default function RecruitmentChat() {
             </button>
           </header>
 
-          <p className="recruit-chat-hint">{t.hint}</p>
-
           <div className="recruit-chat-messages" ref={listRef}>
-            {messages.length === 0 && (
-              <div className="recruit-chat-empty">
-                <p>{t.welcome}</p>
-                <ul>
-                  {t.suggestions.map((s) => (
-                    <li key={s}>
-                      <button
-                        type="button"
-                        className="recruit-chat-suggestion"
-                        onClick={() => void ask(s)}
-                        disabled={sending}
-                      >
-                        {s}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             {messages.map((m, i) => (
               <div
                 key={`${m.role}-${i}`}
@@ -159,6 +151,7 @@ export default function RecruitmentChat() {
         </section>
       )}
 
+      {/* Lanzador completo: solo escritorio */}
       <div className="recruit-chat-launch">
         {!open && (
           <span className="recruit-chat-bounce" aria-hidden="true">
