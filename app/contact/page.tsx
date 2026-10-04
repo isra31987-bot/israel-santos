@@ -22,9 +22,13 @@ export default async function ContactPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
   const { contact: t, profile } = dict;
+  // Si el texto ya trae +34, no duplicar el prefijo en tel:/WhatsApp
   const phoneDigits = profile.phone.replace(/\D/g, "");
-  const phoneHref = `+34${phoneDigits}`;
-  const whatsappNumber = `34${phoneDigits}`;
+  const national = phoneDigits.startsWith("34")
+    ? phoneDigits.slice(2)
+    : phoneDigits;
+  const phoneHref = `+34${national}`;
+  const whatsappNumber = `34${national}`;
 
   return (
     <section className="contact-page border-t border-line">

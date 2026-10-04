@@ -7,7 +7,7 @@ export const logicalcCase: CaseStudyData = {
   title: "Logicalc",
   subtitle: "De experiencia en transporte → producto SaaS",
   intro:
-    "Herramienta de análisis de rentabilidad diseñada para ayudar a pequeños profesionales del transporte a decidir si aceptar o rechazar un viaje según su margen real.",
+    "Una herramienta de análisis de rentabilidad diseñada para ayudar a los pequeños transportistas a tomar decisiones en su día a día.",
   technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
   status: "PRODUCTO FUNCIONAL / MVP",
 
@@ -39,7 +39,7 @@ export const logicalcCase: CaseStudyData = {
     heading: "Un precio sobre la mesa. Sin respuesta clara.",
     paragraphs: [
       "Autónomos del transporte y pequeñas flotas reciben con frecuencia un precio propuesto por un viaje y deben decidir rápidamente si aceptarlo.",
-      "La decisión depende del combustible, seguros, mantenimiento, kilómetros en vacío, amortización y otros costes operativos — pero esos números rara vez están reunidos en un solo lugar.",
+      "La decisión depende de costes como combustible, seguros, mantenimiento, kilómetros en vacío, amortización y otros costes operativos — pero esos números rara vez están reunidos en un solo lugar.",
       "Muchos transportistas confían en el instinto o estimaciones mentales aproximadas. No hay una forma sencilla de ver beneficio neto y margen antes de decir sí o no.",
       "Con el tiempo, tampoco hay un historial estructurado para revisar qué rutas o periodos fueron realmente rentables.",
     ],
@@ -124,7 +124,7 @@ export const logicalcCase: CaseStudyData = {
   ],
 
   statusNote:
-    "Producto funcional desplegado en Vercel. Diseñado como SaaS por suscripción — el sistema de pago y el lanzamiento comercial aún no están implementados. Sin clientes de pago ni suscripciones activas.",
+    "Producto funcional desplegado en Vercel. Diseñado como SaaS por suscripción.",
 
   cta: {
     heading: "¿Aceptas viajes por instinto?",

@@ -12,7 +12,7 @@ export const CHAT_KNOWLEDGE = `
 - Marca: Business × Technology
 - Ubicación: Gandía (Valencia), España
 - Email de contacto: isra31987@gmail.com
-- Teléfono: 677 230 612
+- Teléfono: +34 677 230 612
 - Idiomas: Español (nativo), Inglés (B1)
 - Formación: Licenciado en Economía (Universidad de Castilla-La Mancha); Máster en Comercio Internacional; Especialista en Programación con IA (Racks Academy)
 

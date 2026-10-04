@@ -9,7 +9,7 @@ export const realEstateAutomationCase: CaseStudyData = {
   title: "Real Estate Automation",
   subtitle: "From fragmented workflows → connected system",
   intro:
-    "Connecting leads, email, market monitoring, stock and document generation into a single workflow for a real estate professional.",
+    "A tool for the real-estate sector that connects leads, email, market, stock, alerts and document generation in a single workflow.",
   technologies: ["Supabase", "SQL", "n8n", "Gemini", "Meta", "APIs"],
   status: "FUNCTIONAL SOLUTION",
 
@@ -136,7 +136,7 @@ export const realEstateAutomationCase: CaseStudyData = {
   ],
 
   statusNote:
-    "Built as a functional MVP for a real estate workflow. Not currently in active commercial use.",
+    "Built as a functional MVP for a real estate workflow.",
 
   cta: {
     heading: "Have fragmented tools?",

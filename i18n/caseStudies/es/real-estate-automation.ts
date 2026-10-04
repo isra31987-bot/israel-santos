@@ -7,7 +7,7 @@ export const realEstateAutomationCase: CaseStudyData = {
   title: "Automatización Inmobiliaria",
   subtitle: "De flujos fragmentados → sistema conectado",
   intro:
-    "Conexión de leads, email, monitorización de mercado, stock y generación de documentos en un único flujo de trabajo para un profesional inmobiliario.",
+    "Una herramienta para el sector inmobiliario que conecta leads, email, mercado, stock, alertas y generación documental en un único flujo de trabajo.",
   technologies: ["Supabase", "SQL", "n8n", "Gemini", "Meta", "APIs"],
   status: "SOLUCIÓN FUNCIONAL",
 
@@ -134,7 +134,7 @@ export const realEstateAutomationCase: CaseStudyData = {
   ],
 
   statusNote:
-    "Construido como MVP funcional para un flujo inmobiliario. Actualmente no está en uso comercial activo.",
+    "Construido como MVP funcional para un flujo inmobiliario.",
 
   cta: {
     heading: "¿Tienes herramientas fragmentadas?",

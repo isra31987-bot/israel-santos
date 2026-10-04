@@ -12,11 +12,15 @@ import fs from "node:fs";
 import fsp from "node:fs/promises";
 import path from "node:path";
 
+const FULL_NAME = "Israel Santos López";
 const EMAIL = "isra31987@gmail.com";
-// Enlaces opcionales (no inventar URLs). LinkedIn sigue pendiente en el portfolio.
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "")
-  .replace(/\/$/, "")
-  .replace("https://tu-dominio.vercel.app", "");
+const PHONE = "+34 677 230 612";
+const PHONE_HREF = "tel:+34677230612";
+const CITY = "Gandía (Valencia)";
+// Portfolio público del CV (no usar localhost del .env.local)
+const SITE_URL = (
+  process.env.CV_SITE_URL || "https://israel-santos.vercel.app"
+).replace(/\/$/, "");
 const LINKEDIN_URL = (process.env.CV_LINKEDIN_URL ?? "").replace(/\/$/, "");
 
 // Paleta portfolio (organic dark → imprimible)
@@ -72,7 +76,7 @@ function paintPageChrome(doc: PDFKit.PDFDocument, pageNum: number) {
     .font("Helvetica")
     .fontSize(7)
     .text(
-      "Israel Santos · Analista de Negocio y Transformación Digital",
+      `${FULL_NAME} · Analista de Negocio y Transformación Digital`,
       MARGIN_X,
       footerY,
       { width: CONTENT_W - 70, lineBreak: false },
@@ -221,8 +225,8 @@ async function buildPdf(outPath: string) {
     size: "A4",
     margins: { top: 0, bottom: 0, left: 0, right: 0 },
     info: {
-      Title: "Israel Santos — CV",
-      Author: "Israel Santos",
+      Title: `${FULL_NAME} — CV`,
+      Author: FULL_NAME,
       Subject: "Analista de Negocio y Transformación Digital",
       Keywords:
         "Business Analysis, Transformación Digital, Automatización, IA, Operaciones",
@@ -240,8 +244,8 @@ async function buildPdf(outPath: string) {
   doc
     .fillColor(C.walnut)
     .font("Helvetica-Bold")
-    .fontSize(22)
-    .text("Israel Santos", MARGIN_X, ctx.y, { width: CONTENT_W });
+    .fontSize(20)
+    .text(FULL_NAME, MARGIN_X, ctx.y, { width: CONTENT_W });
   ctx.y = doc.y + 3;
 
   doc
@@ -265,23 +269,31 @@ async function buildPdf(outPath: string) {
     );
   ctx.y = doc.y + 8;
 
-  // Contacto
+  // Contacto: email · teléfono · ciudad · portfolio
   const contactParts: { label: string; url?: string }[] = [
     { label: EMAIL, url: `mailto:${EMAIL}` },
+    { label: PHONE, url: PHONE_HREF },
+    { label: CITY },
+    { label: SITE_URL, url: SITE_URL },
   ];
   if (LINKEDIN_URL) contactParts.push({ label: "LinkedIn", url: LINKEDIN_URL });
-  if (SITE_URL) contactParts.push({ label: "Portfolio", url: SITE_URL });
-  else contactParts.push({ label: "Portfolio (web)" });
 
+  // Puede ocupar 2 líneas en A4
   let cx = MARGIN_X;
+  const maxX = MARGIN_X + CONTENT_W;
   for (let i = 0; i < contactParts.length; i++) {
     const part = contactParts[i];
-    if (i > 0) {
-      doc.fillColor(C.line).font("Helvetica").fontSize(8).text(" · ", cx, ctx.y, {
+    const sep = i > 0 ? "  ·  " : "";
+    const sepW = sep ? doc.widthOfString(sep) : 0;
+    const labelW = doc.widthOfString(part.label);
+    if (cx + sepW + labelW > maxX && i > 0) {
+      ctx.y += 11;
+      cx = MARGIN_X;
+    } else if (i > 0) {
+      doc.fillColor(C.line).font("Helvetica").fontSize(8).text(sep, cx, ctx.y, {
         lineBreak: false,
-        continued: false,
       });
-      cx += doc.widthOfString(" · ");
+      cx += sepW;
     }
     doc.fillColor(C.ink).font("Helvetica").fontSize(8);
     if (part.url) {
@@ -293,7 +305,7 @@ async function buildPdf(outPath: string) {
     } else {
       doc.text(part.label, cx, ctx.y, { lineBreak: false });
     }
-    cx += doc.widthOfString(part.label);
+    cx += labelW;
   }
   ctx.y += 14;
 

@@ -26,7 +26,7 @@ export const en: Dictionary = {
       "Digital Solutions",
     ],
     email: "isra31987@gmail.com",
-    phone: "677 230 612",
+    phone: "+34 677 230 612",
     city: "Gandía (Valencia)",
     english: "B1",
     footerLine: "Built to connect technology, business vision and AI",
@@ -129,7 +129,7 @@ export const en: Dictionary = {
     label: "Work",
     heading: "Selected work",
     intro:
-      "Four cases where a business problem became a digital solution. Honest status, no invented metrics.",
+      "Four cases where a business problem became a digital solution.",
     viewCase: "View case →",
   },
   aboutWhyMe: aboutWhyMeEn,
@@ -261,13 +261,13 @@ export const en: Dictionary = {
       title: "Real Estate Automation",
       subtitle: "From fragmented workflows → connected system",
       description:
-        "A management tool connecting leads, email, market, stock, alerts and document generation in a single workflow.",
+        "A tool for the real-estate sector that connects leads, email, market, stock, alerts and document generation in a single workflow.",
       problem:
         "A real estate professional managed email, Meta leads, portals, stock and contracts in separate flows with no shared base.",
       analysis:
         "Each channel operated in isolation. A system was needed to unify information and automate alerts and documents.",
       solution:
-        "InmoFlow: AI Inbox (Gemini), inventory, tracker with Milanuncios scraping, Kanban funnel for Meta leads (n8n) and document generation from Supabase templates. Functional; not in active commercial use.",
+        "InmoFlow: AI Inbox (Gemini), inventory, tracker with Milanuncios scraping, Kanban funnel for Meta leads (n8n) and document generation from Supabase templates.",
       technologies: [
         "Supabase",
         "SQL",
@@ -285,13 +285,13 @@ export const en: Dictionary = {
       title: "Logicalc",
       subtitle: "From transport experience → SaaS product",
       description:
-        "A profitability analysis tool designed to help small transport professionals decide whether to accept or reject a trip based on real margin.",
+        "A profitability analysis tool designed to help small transport professionals make day-to-day decisions.",
       problem:
         "Self-employed carriers and small fleets accepted trips without real visibility of fuel, insurance, maintenance and other operating costs.",
       analysis:
         "They received a trip price without being able to quickly calculate net profit or accumulated profitability over a period.",
       solution:
-        "LogiCalc (Next.js): per-trip and period profitability calculator, historical registry, cost profile with admin approval. PostgreSQL on Supabase, deployed on Vercel. Designed as SaaS; payment gateway and commercial launch pending.",
+        "LogiCalc (Next.js): per-trip and period profitability calculator, historical registry, cost profile with admin approval. PostgreSQL on Supabase, deployed on Vercel. Designed as SaaS.",
       technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
       status: "FUNCTIONAL PRODUCT / MVP",
     },
@@ -344,9 +344,9 @@ export const en: Dictionary = {
       title: "Real Estate Automation",
       subtitle: "From fragmented workflows → connected system",
       description:
-        "A management tool connecting leads, email, market, stock, alerts and document generation in a single workflow.",
+        "A tool for the real-estate sector that connects leads, email, market, stock, alerts and document generation in a single workflow.",
       context:
-        "Built for a real estate professional (InmoFlow). Includes automated email management, market monitoring, portal scraping (Idealista, Milanuncios), opportunity detection, stock management, expiry alerts, Meta leads and document generation from client templates. SQL base on Supabase; AI with Gemini. Functional but not in active commercial use.",
+        "Built for a real estate professional (InmoFlow). Includes automated email management, market monitoring, portal scraping (Idealista, Milanuncios), opportunity detection, stock management, expiry alerts, Meta leads and document generation from client templates. SQL base on Supabase; AI with Gemini.",
       technologies: [
         "Supabase",
         "SQL",
@@ -375,9 +375,9 @@ export const en: Dictionary = {
       title: "Logicalc",
       subtitle: "From transport experience → SaaS product",
       description:
-        "A profitability analysis tool designed to help small transport professionals decide whether to accept or reject a trip based on real margin.",
+        "A profitability analysis tool designed to help small transport professionals make day-to-day decisions.",
       context:
-        "Born from direct experience in the transport sector. Many self-employed carriers receive a trip price without real visibility of fuel, insurance, maintenance and other operating costs. Calculates per-trip and accumulated profitability over a period. Designed as subscription SaaS; payment gateway and commercial launch not yet implemented.",
+        "Born from direct experience in the transport sector. Many self-employed carriers receive a trip price without real visibility of fuel, insurance, maintenance and other operating costs. Calculates per-trip and accumulated profitability over a period. Designed as subscription SaaS.",
       technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
       status: "FUNCTIONAL PRODUCT / MVP",
       workflow: ["TRIP + COSTS", "PROFITABILITY", "ACCEPT / REJECT"],

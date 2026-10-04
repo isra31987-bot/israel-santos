@@ -9,7 +9,7 @@ export const logicalcCase: CaseStudyData = {
   title: "Logicalc",
   subtitle: "From transport experience → SaaS product",
   intro:
-    "A profitability analysis tool designed to help small transport professionals decide whether to accept or reject a trip based on its real margin.",
+    "A profitability analysis tool designed to help small transport professionals make day-to-day decisions.",
   technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
   status: "FUNCTIONAL PRODUCT / MVP",
 
@@ -126,7 +126,7 @@ export const logicalcCase: CaseStudyData = {
   ],
 
   statusNote:
-    "Functional product deployed on Vercel. Designed as a subscription SaaS — payment system and commercial launch are not yet implemented. No paying customers or active subscriptions.",
+    "Functional product deployed on Vercel. Designed as a subscription SaaS.",
 
   cta: {
     heading: "Accepting trips on instinct?",

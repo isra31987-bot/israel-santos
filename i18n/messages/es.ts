@@ -26,7 +26,7 @@ export const es: Dictionary = {
       "Soluciones digitales",
     ],
     email: "isra31987@gmail.com",
-    phone: "677 230 612",
+    phone: "+34 677 230 612",
     city: "Gandía (Valencia)",
     english: "B1",
     footerLine: "Creado para conectar tecnología, visión de negocio e IA",
@@ -129,7 +129,7 @@ export const es: Dictionary = {
     label: "Proyectos",
     heading: "Proyectos seleccionados",
     intro:
-      "Cuatro casos donde un problema de negocio se convirtió en solución digital. Estados honestos, sin métricas inventadas.",
+      "Cuatro casos donde un problema de negocio se convirtió en solución digital.",
     viewCase: "Ver caso →",
   },
   aboutWhyMe: aboutWhyMeEs,
@@ -261,13 +261,13 @@ export const es: Dictionary = {
       title: "Real Estate Automation",
       subtitle: "De flujos fragmentados → sistema conectado",
       description:
-        "Una herramienta de gestión que conecta leads, email, mercado, stock, alertas y generación documental en un único flujo de trabajo.",
+        "Una herramienta para el sector inmobiliario que conecta leads, email, mercado, stock, alertas y generación documental en un único flujo de trabajo.",
       problem:
         "Un profesional inmobiliario gestionaba correo, leads de Meta, portales, stock y contratos en flujos separados, sin una base común.",
       analysis:
         "Cada canal operaba de forma aislada. Faltaba un sistema que uniera la información y automatizara alertas y documentos.",
       solution:
-        "InmoFlow: Inbox IA (Gemini), inventario, rastreador con scraping de Milanuncios, embudo Kanban para leads Meta (n8n) y generación documental desde plantillas en Supabase. Funcional; no en uso comercial activo.",
+        "InmoFlow: Inbox IA (Gemini), inventario, rastreador con scraping de Milanuncios, embudo Kanban para leads Meta (n8n) y generación documental desde plantillas en Supabase.",
       technologies: [
         "Supabase",
         "SQL",
@@ -285,13 +285,13 @@ export const es: Dictionary = {
       title: "Logicalc",
       subtitle: "De experiencia en transporte → producto SaaS",
       description:
-        "Una herramienta de análisis de rentabilidad diseñada para ayudar a pequeños transportistas a decidir si aceptar o rechazar un viaje basándose en su rentabilidad real.",
+        "Una herramienta de análisis de rentabilidad diseñada para ayudar a los pequeños transportistas a tomar decisiones en su día a día.",
       problem:
         "Transportistas autónomos y pequeñas flotas aceptaban viajes sin visibilidad real de combustible, seguros, mantenimiento y otros costes operativos.",
       analysis:
         "Recibían un precio por viaje sin poder calcular rápido el beneficio neto ni acumular rentabilidad por periodo.",
       solution:
-        "LogiCalc (Next.js): calculadora de rentabilidad por viaje y periodo, registro histórico, perfil de costes con aprobación admin. PostgreSQL en Supabase, desplegado en Vercel. Diseñado como SaaS; pasarela de pagos y lanzamiento comercial pendientes.",
+        "LogiCalc (Next.js): calculadora de rentabilidad por viaje y periodo, registro histórico, perfil de costes con aprobación admin. PostgreSQL en Supabase, desplegado en Vercel. Diseñado como SaaS.",
       technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
       status: "PRODUCTO FUNCIONAL / MVP",
     },
@@ -344,9 +344,9 @@ export const es: Dictionary = {
       title: "Real Estate Automation",
       subtitle: "De flujos fragmentados → sistema conectado",
       description:
-        "Una herramienta de gestión que conecta leads, email, mercado, stock, alertas y generación documental en un único flujo de trabajo.",
+        "Una herramienta para el sector inmobiliario que conecta leads, email, mercado, stock, alertas y generación documental en un único flujo de trabajo.",
       context:
-        "Desarrollada para un profesional inmobiliario (InmoFlow). Incluye gestión automatizada de correo, monitorización del mercado, scraping de portales como Idealista y Milanuncios, detección de oportunidades, gestión de stock, alertas de vencimiento, leads de Meta y generación documental desde plantillas del cliente. Base SQL en Supabase; IA con Gemini. Funcional, pero no en uso comercial activo.",
+        "Desarrollada para un profesional inmobiliario (InmoFlow). Incluye gestión automatizada de correo, monitorización del mercado, scraping de portales como Idealista y Milanuncios, detección de oportunidades, gestión de stock, alertas de vencimiento, leads de Meta y generación documental desde plantillas del cliente. Base SQL en Supabase; IA con Gemini.",
       technologies: [
         "Supabase",
         "SQL",
@@ -375,9 +375,9 @@ export const es: Dictionary = {
       title: "Logicalc",
       subtitle: "De experiencia en transporte → producto SaaS",
       description:
-        "Una herramienta de análisis de rentabilidad diseñada para ayudar a pequeños transportistas a decidir si aceptar o rechazar un viaje basándose en su rentabilidad real.",
+        "Una herramienta de análisis de rentabilidad diseñada para ayudar a los pequeños transportistas a tomar decisiones en su día a día.",
       context:
-        "Nació de la experiencia directa en el sector transporte. Muchos autónomos reciben un precio por viaje sin visibilidad real de combustible, seguros, mantenimiento y otros costes operativos. Permite calcular rentabilidad por viaje y acumulada en un periodo. Diseñado como SaaS por suscripción; pasarela de pagos y lanzamiento comercial aún no implementados.",
+        "Nació de la experiencia directa en el sector transporte. Muchos autónomos reciben un precio por viaje sin visibilidad real de combustible, seguros, mantenimiento y otros costes operativos. Permite calcular rentabilidad por viaje y acumulada en un periodo. Diseñado como SaaS por suscripción.",
       technologies: ["Next.js", "React", "Node.js", "Supabase", "SQL"],
       status: "PRODUCTO FUNCIONAL / MVP",
       workflow: ["VIAJE + COSTES", "RENTABILIDAD", "ACEPTAR / RECHAZAR"],

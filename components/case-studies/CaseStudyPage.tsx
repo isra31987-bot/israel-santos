@@ -248,31 +248,6 @@ export default function CaseStudyPage({
       <section className="case-section border-t border-line">
         <div className="case-section-inner">
           <Reveal>
-            <h2 className="case-heading">{ui.insideSolution}</h2>
-            <div className="case-evidence-grid">
-              {hasShots ? null : (
-                cs.evidencePlaceholders.map((label) => (
-                  <VisualPlaceholder
-                    key={label}
-                    label={label}
-                    kicker={ui.projectVisual}
-                    note={ui.screenshotComing}
-                  />
-                ))
-              )}
-              <VisualPlaceholder
-                label={ui.demoVideo}
-                kicker={ui.projectVisual}
-                note={ui.videoComing}
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="case-section border-t border-line">
-        <div className="case-section-inner">
-          <Reveal>
             <h2 className="case-heading case-heading--sm">{ui.builtWith}</h2>
             <ul className="case-tags case-tags--lg">
               {cs.builtWith.map((tech) => (
@@ -309,16 +284,6 @@ export default function CaseStudyPage({
                 </div>
               ))}
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="case-section border-t border-line">
-        <div className="case-section-inner">
-          <Reveal>
-            <h2 className="case-heading case-heading--sm">{ui.projectStatus}</h2>
-            <p className="case-status-badge">{cs.status}</p>
-            <p className="case-prose mt-4">{cs.statusNote}</p>
           </Reveal>
         </div>
       </section>
