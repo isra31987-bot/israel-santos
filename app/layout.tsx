@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnalyticsGate from "@/components/AnalyticsGate";
 import RecruitmentChat from "@/components/RecruitmentChat";
+import VisitNotifier from "@/components/VisitNotifier";
 import DictionaryProvider from "@/components/DictionaryProvider";
 import { getDictionary } from "@/i18n/getDictionary";
 import { getLocale } from "@/i18n/locale";
@@ -71,6 +72,8 @@ export default async function RootLayout({
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
           <RecruitmentChat />
+          {/* Aviso por email si la URL trae ?ref= (candidaturas) */}
+          <VisitNotifier />
           {/* Vercel Web Analytics — privacy-friendly, sin cookies de terceros */}
           <Analytics />
         </DictionaryProvider>

@@ -418,7 +418,7 @@ export const es: Dictionary = {
   },
   footer: {
     experimentsLink: "Experimentos personales →",
-    privacyLink: "Privacidad",
+    privacyLink: "Aviso legal y privacidad",
   },
   chatbot: {
     kicker: "¿Quieres preguntarme algo?",
