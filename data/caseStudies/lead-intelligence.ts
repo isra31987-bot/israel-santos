@@ -13,6 +13,31 @@ export const leadIntelligenceCase: CaseStudyData = {
   technologies: ["Data", "Automation", "Analysis", "Python"],
   status: "EXPERIMENTAL / FUNCTIONAL",
 
+  screenshots: [
+    {
+      src: "/work/lead-intelligence/01-dashboard.jpg",
+      alt: "Lead Intelligence performance dashboard overview",
+      caption: "Modern and user-friendly interface",
+    },
+    {
+      src: "/work/lead-intelligence/02-extraccion.jpg",
+      alt: "Lead Intelligence data acquisition and OCR extraction hub",
+      caption: "Data extraction and OCR",
+    },
+    {
+      src: "/work/lead-intelligence/03-cruce.jpg",
+      alt: "Lead Intelligence audience cross-reference and intersection",
+      caption: "Audience crossing and intersection",
+    },
+    {
+      src: "/work/lead-intelligence/04-scoring.jpg",
+      alt: "Lead Intelligence lead scoring and prioritization",
+      caption: "Lead scoring and prioritization system",
+    },
+  ],
+  screenshotsNote:
+    "Interface and metrics shown via simulations with anonymised data for privacy and data-protection reasons.",
+
   problem: {
     label: "THE PROBLEM",
     heading: "Audiences exist. Opportunities are hard to find.",

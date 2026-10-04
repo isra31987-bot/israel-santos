@@ -99,11 +99,16 @@ export default function CaseStudyPage({
 
         <Reveal className="mt-12" delay={0.1}>
           {hasShots && cs.screenshots ? (
-            <CaseScreenshotGallery
-              shots={cs.screenshots}
-              variant="hero"
-              closeLabel={ui.closeLightbox}
-            />
+            <>
+              <CaseScreenshotGallery
+                shots={cs.screenshots}
+                variant="hero"
+                closeLabel={ui.closeLightbox}
+              />
+              {cs.screenshotsNote && (
+                <p className="case-shots-note">{cs.screenshotsNote}</p>
+              )}
+            </>
           ) : (
             <VisualPlaceholder
               label={ui.projectScreenshot}

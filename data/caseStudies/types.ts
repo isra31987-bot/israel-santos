@@ -38,6 +38,8 @@ export type CaseStudyData = {
   status: string;
   /** Capturas reales: si existen, sustituyen placeholders visuales */
   screenshots?: CaseStudyScreenshot[];
+  /** Aviso bajo la galería (p. ej. simulaciones / privacidad) */
+  screenshotsNote?: string;
   problem: {
     label: string;
     heading: string;

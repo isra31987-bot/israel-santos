@@ -11,6 +11,31 @@ export const leadIntelligenceCase: CaseStudyData = {
   technologies: ["Data", "Automation", "Analysis", "Python"],
   status: "EXPERIMENTAL / FUNCIONAL",
 
+  screenshots: [
+    {
+      src: "/work/lead-intelligence/01-dashboard.jpg",
+      alt: "Dashboard de rendimiento de Lead Intelligence",
+      caption: "Interfaz moderna y user friendly",
+    },
+    {
+      src: "/work/lead-intelligence/02-extraccion.jpg",
+      alt: "Hub de extracción de datos y OCR de Lead Intelligence",
+      caption: "Extracción de datos y OCR",
+    },
+    {
+      src: "/work/lead-intelligence/03-cruce.jpg",
+      alt: "Cruce de audiencias e intersección en Lead Intelligence",
+      caption: "Cruce de audiencias e intersección",
+    },
+    {
+      src: "/work/lead-intelligence/04-scoring.jpg",
+      alt: "Sistema de lead scoring y priorización",
+      caption: "Sistema de lead scoring y priorización",
+    },
+  ],
+  screenshotsNote:
+    "Interfaz y métricas mostradas mediante simulaciones con datos anonimizados por motivos de privacidad y protección de datos.",
+
   problem: {
     label: "EL PROBLEMA",
     heading: "Las audiencias existen. Las oportunidades son difíciles de encontrar.",
