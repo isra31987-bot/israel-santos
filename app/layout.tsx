@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnalyticsGate from "@/components/AnalyticsGate";
@@ -71,6 +72,7 @@ export default async function RootLayout({
           <Footer />
           <RecruitmentChat />
         </DictionaryProvider>
+        <Analytics />
       </body>
     </html>
   );

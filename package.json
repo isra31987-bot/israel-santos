@@ -11,6 +11,7 @@
     "cv:pdf": "tsx scripts/generate-cv-pdf.tsx"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^13.1.1",
     "lucide-react": "^1.35.0",
     "next": "16.3.3",
