@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnalyticsGate from "@/components/AnalyticsGate";
+import RecruitmentChat from "@/components/RecruitmentChat";
 import DictionaryProvider from "@/components/DictionaryProvider";
 import { getDictionary } from "@/i18n/getDictionary";
 import { getLocale } from "@/i18n/locale";
@@ -68,6 +69,7 @@ export default async function RootLayout({
           <Navbar />
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
+          <RecruitmentChat />
         </DictionaryProvider>
       </body>
     </html>

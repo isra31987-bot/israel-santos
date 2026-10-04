@@ -189,6 +189,22 @@ export type Dictionary = {
     experimentsLink: string;
     privacyLink: string;
   };
+  chatbot: {
+    kicker: string;
+    title: string;
+    hint: string;
+    welcome: string;
+    suggestions: string[];
+    placeholder: string;
+    inputLabel: string;
+    send: string;
+    open: string;
+    close: string;
+    typing: string;
+    errorGeneric: string;
+    errorNotConfigured: string;
+    errorRateLimited: string;
+  };
   projects: {
     number: string;
     slug: string;

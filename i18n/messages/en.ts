@@ -29,7 +29,7 @@ export const en: Dictionary = {
     phone: "677 230 612",
     city: "Gandía (Valencia)",
     english: "B1",
-    footerLine: "Built with curiosity, AI and a lot of problem solving.",
+    footerLine: "Built to connect technology, business vision and AI",
   },
   nav: [
     { href: "/work", label: "Work" },
@@ -415,5 +415,32 @@ export const en: Dictionary = {
   footer: {
     experimentsLink: "Personal experiments →",
     privacyLink: "Privacy",
+  },
+  chatbot: {
+    kicker: "FOR RECRUITERS",
+    title: "Ask about my profile",
+    hint: "I only answer questions related to professional evaluation and recruiting.",
+    welcome:
+      "Common interview and logistics questions. Pick one or type your own:",
+    suggestions: [
+      "What is his availability to start?",
+      "Does he have his own car and a driving licence?",
+      "Does he prefer on-site, hybrid or remote, and what schedule?",
+      "Does he fit a Full Stack role (React, Node, MongoDB)?",
+      "Does he have experience with REST APIs and full-stack web apps?",
+      "Does he use Git and work well both in a team and independently?",
+      "How does his business × technology profile fit a development team?",
+      "What kind of role is he looking for?",
+    ],
+    placeholder: "Type your question…",
+    inputLabel: "Ask the assistant",
+    send: "Send",
+    open: "Want to ask me something?",
+    close: "Close",
+    typing: "Thinking…",
+    errorGeneric: "Could not reply. Try again or email me.",
+    errorNotConfigured:
+      "Chat is not configured yet. Email isra31987@gmail.com instead.",
+    errorRateLimited: "Too many questions. Wait a minute and try again.",
   },
 };

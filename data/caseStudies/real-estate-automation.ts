@@ -13,6 +13,31 @@ export const realEstateAutomationCase: CaseStudyData = {
   technologies: ["Supabase", "SQL", "n8n", "Gemini", "Meta", "APIs"],
   status: "FUNCTIONAL SOLUTION",
 
+  screenshots: [
+    {
+      src: "/work/real-estate-automation/01-inbox.jpg",
+      alt: "InmoFlow AI Inbox with portal and client messages",
+      caption:
+        "Centralizes incoming queries and interactions from different channels",
+    },
+    {
+      src: "/work/real-estate-automation/02-inventario.jpg",
+      alt: "InmoFlow inventory with property cards and pending alerts",
+      caption: "Inventory management and alert control",
+    },
+    {
+      src: "/work/real-estate-automation/03-embudo.jpg",
+      alt: "InmoFlow capture funnel Kanban board",
+      caption: "Capture funnel: organizes the conversion flow",
+    },
+    {
+      src: "/work/real-estate-automation/04-documentos.jpg",
+      alt: "InmoFlow document templates editor",
+      caption:
+        "Document generator: automates drafts and legal documents",
+    },
+  ],
+
   problem: {
     label: "THE PROBLEM",
     heading: "Too many channels. No single system.",

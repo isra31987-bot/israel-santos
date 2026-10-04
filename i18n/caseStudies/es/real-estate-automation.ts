@@ -11,6 +11,31 @@ export const realEstateAutomationCase: CaseStudyData = {
   technologies: ["Supabase", "SQL", "n8n", "Gemini", "Meta", "APIs"],
   status: "SOLUCIÓN FUNCIONAL",
 
+  screenshots: [
+    {
+      src: "/work/real-estate-automation/01-inbox.jpg",
+      alt: "IA Inbox de InmoFlow con mensajes de portales y clientes",
+      caption:
+        "Centraliza las consultas e interacciones entrantes desde diferentes canales",
+    },
+    {
+      src: "/work/real-estate-automation/02-inventario.jpg",
+      alt: "Inventario de InmoFlow con fichas y alertas pendientes",
+      caption: "Gestión de inventario y control de alertas",
+    },
+    {
+      src: "/work/real-estate-automation/03-embudo.jpg",
+      alt: "Embudo de captación Kanban de InmoFlow",
+      caption: "Embudo de captación: organiza el flujo de conversión",
+    },
+    {
+      src: "/work/real-estate-automation/04-documentos.jpg",
+      alt: "Editor de plantillas de documentos de InmoFlow",
+      caption:
+        "Generador de documentos: automatiza la creación de borradores y documentos legales",
+    },
+  ],
+
   problem: {
     label: "EL PROBLEMA",
     heading: "Demasiados canales. Ningún sistema único.",

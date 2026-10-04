@@ -29,8 +29,7 @@ export const es: Dictionary = {
     phone: "677 230 612",
     city: "Gandía (Valencia)",
     english: "B1",
-    footerLine:
-      "Construido con curiosidad, IA y mucha resolución de problemas.",
+    footerLine: "Creado para conectar tecnología, visión de negocio e IA",
   },
   nav: [
     { href: "/work", label: "Proyectos" },
@@ -416,5 +415,32 @@ export const es: Dictionary = {
   footer: {
     experimentsLink: "Experimentos personales →",
     privacyLink: "Privacidad",
+  },
+  chatbot: {
+    kicker: "PARA RECLUTADORES",
+    title: "Pregunta sobre mi perfil",
+    hint: "Solo respondo preguntas relacionadas con evaluación profesional y reclutamiento.",
+    welcome:
+      "Preguntas habituales de entrevista y condiciones. Elige una o escribe la tuya:",
+    suggestions: [
+      "¿Cuál es su disponibilidad de incorporación?",
+      "¿Tiene vehículo propio y carnet de conducir?",
+      "¿Prefiere presencial, híbrido o remoto y qué jornada?",
+      "¿Encaja en un puesto Full Stack (React, Node, MongoDB)?",
+      "¿Tiene experiencia con APIs REST y desarrollo web completo?",
+      "¿Trabaja con Git y se desenvuelve en equipo y en autonomía?",
+      "¿Cómo encaja su perfil negocio × tecnología en un equipo de desarrollo?",
+      "¿Qué tipo de rol está buscando?",
+    ],
+    placeholder: "Escribe tu pregunta…",
+    inputLabel: "Pregunta al asistente",
+    send: "Enviar",
+    open: "¿Quieres preguntarme algo?",
+    close: "Cerrar",
+    typing: "Pensando…",
+    errorGeneric: "No se pudo responder. Inténtalo de nuevo o escríbeme por email.",
+    errorNotConfigured:
+      "El chat aún no está configurado. Escríbeme a isra31987@gmail.com.",
+    errorRateLimited: "Demasiadas preguntas seguidas. Espera un minuto e inténtalo de nuevo.",
   },
 };
