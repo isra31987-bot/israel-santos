@@ -45,7 +45,7 @@ export const en: Dictionary = {
   homeClosing: {
     value: {
       label: "WHAT I BRING",
-      heading: ["TO YOUR COMPANY.", "NOT JUST CODE."],
+      heading: ["REAL SOLUTIONS", "FOR REAL PROCESSES"],
       supporting:
         "I combine real operations experience with the ability to analyse processes, find friction and build practical digital solutions.",
       items: [
@@ -171,6 +171,10 @@ export const en: Dictionary = {
       statusError: "Couldn't send. Please try again or email me directly.",
       statusNotConfigured:
         "Email delivery is not configured on the server yet. Use WhatsApp or the direct email link.",
+      scheduleTitle: "Prefer to book a slot directly?",
+      scheduleHint:
+        "Pick a time on the calendar. You can still send the message below.",
+      scheduleOpen: "Open calendar →",
     },
   },
   cv: cvPageEn,

@@ -68,6 +68,11 @@ Participar en el ciclo de vida de una solución: análisis, diseño, construcci�
 - Colabora de forma práctica entre perfiles de negocio y tecnología.
 - Abierto a revisiones de código, buenas prácticas y mejora continua.
 
+## Agenda / entrevistas
+- Para agendar una entrevista, reunión, meet, call o videollamada, usar siempre este enlace:
+  https://cal.com/israel-santos-lopez-mozdgo
+- También se puede abrir el calendario en la página Contacto escribiendo palabras como “entrevista” o “agendar” en el mensaje.
+
 ## Condiciones y logística (para reclutadores)
 - Disponibilidad de incorporación: Disponible para incorporar de forma inmediata o con un preaviso breve, según se acuerde con la empresa.
 - Vehículo propio: Sí, dispone de vehículo propio.

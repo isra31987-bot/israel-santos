@@ -2457,6 +2457,79 @@ a.contact-value:hover {
   color: var(--muted);
 }
 
+/* Calendario Cal.com — solo tras palabras clave en el mensaje */
+.contact-calendar {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem 0 0.25rem;
+  border-top: 1px solid var(--glass-border);
+  animation: contact-calendar-in 0.35s ease;
+}
+
+@keyframes contact-calendar-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-calendar-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.contact-calendar-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.contact-calendar-frame-wrap {
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--surface);
+  min-height: 28rem;
+}
+
+.contact-calendar-frame {
+  display: block;
+  width: 100%;
+  height: 32rem;
+  border: 0;
+  background: #fff;
+}
+
+.contact-calendar-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-hover);
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.contact-calendar-link:hover {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 50%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-calendar {
+    animation: none;
+  }
+}
+
 .contact-form-status {
   margin: 0;
   font-size: 0.8125rem;
@@ -3672,13 +3745,43 @@ a.contact-value:hover {
 }
 
 /* --- Home closing (M6) --- */
-.home-value-list {
+/* Home — Qué puedo aportar */
+.home-value-label {
   margin: 0;
+}
+
+.home-value-heading {
+  margin: 1rem 0 0;
+  max-width: 18ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12em;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.home-value-heading-line {
+  display: block;
+}
+
+.home-value-supporting {
+  margin: 1.75rem 0 0;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.home-value-list {
+  margin: 2rem 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.75rem;
-  max-width: 36rem;
+  gap: 0.85rem;
+  max-width: 40rem;
 }
 
 .home-value-list li {
@@ -3696,10 +3799,45 @@ a.contact-value:hover {
   color: var(--accent);
 }
 
+.home-value-ctas {
+  margin-top: 2.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .home-value-heading {
+    font-size: 2.25rem;
+    max-width: 16ch;
+  }
+}
+
 @media (min-width: 768px) {
   .home-value-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem 2rem;
+    gap: 0.9rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-value-heading {
+    font-size: 2.75rem;
+    line-height: 1.1;
+    max-width: 14ch;
+  }
+
+  .home-value-supporting {
+    margin-top: 2rem;
+  }
+
+  .home-value-list {
+    margin-top: 2.25rem;
+  }
+
+  .home-value-ctas {
+    margin-top: 3rem;
   }
 }
 
@@ -4005,20 +4143,29 @@ a.contact-value:hover {
   .recruit-chat-panel {
     width: 100%;
     max-width: none;
+    max-height: min(22rem, calc(100vh - 5.5rem));
+  }
+
+  .recruit-chat-messages {
+    max-height: 9rem;
+  }
+
+  .recruit-chat-messages:empty {
+    max-height: 0;
   }
 }
 
 .recruit-chat-panel {
   width: min(24rem, calc(100vw - 2rem));
-  max-height: min(34rem, calc(100vh - 6rem));
+  max-height: min(28rem, calc(100vh - 6rem));
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--glass-border);
+  border: 1px solid color-mix(in srgb, var(--amber) 40%, var(--glass-border));
   background:
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--surface-subtle) 90%, transparent),
-      var(--bg)
+      color-mix(in srgb, var(--amber) 14%, #1c1814),
+      color-mix(in srgb, var(--amber) 8%, var(--bg))
     );
   box-shadow: 0 18px 40px color-mix(in srgb, #000 45%, transparent);
   overflow: hidden;
@@ -4029,7 +4176,8 @@ a.contact-value:hover {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1rem 0.5rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .recruit-chat-kicker {
@@ -4072,14 +4220,21 @@ a.contact-value:hover {
 }
 
 .recruit-chat-messages {
-  flex: 1;
-  min-height: 12rem;
-  max-height: 18rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 12rem;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
+}
+
+/* Sin mensajes: casi sin hueco vacío */
+.recruit-chat-messages:empty {
+  min-height: 0;
+  max-height: 0;
+  padding: 0;
 }
 
 .recruit-chat-empty {
@@ -4130,15 +4285,15 @@ a.contact-value:hover {
 
 .recruit-chat-bubble--user {
   align-self: flex-end;
-  background: color-mix(in srgb, var(--accent) 35%, var(--surface));
-  border: 1px solid color-mix(in srgb, var(--accent-hover) 35%, transparent);
+  background: color-mix(in srgb, var(--amber) 28%, #2a2218);
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
   color: var(--text);
 }
 
 .recruit-chat-bubble--model {
   align-self: flex-start;
-  background: var(--surface);
-  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--amber) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--amber) 30%, var(--glass-border));
   color: var(--muted);
 }
 
@@ -4160,7 +4315,8 @@ a.contact-value:hover {
   grid-template-columns: 1fr auto;
   gap: 0.5rem;
   padding: 0.75rem 1rem 1rem;
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid color-mix(in srgb, var(--amber) 28%, var(--glass-border));
+  background: color-mix(in srgb, var(--amber) 12%, transparent);
 }
 
 .recruit-chat-form input {
@@ -4178,8 +4334,8 @@ a.contact-value:hover {
 }
 
 .recruit-chat-form button {
-  border: 1px solid color-mix(in srgb, var(--amber) 40%, var(--accent));
-  background: color-mix(in srgb, var(--accent) 40%, transparent);
+  border: 1px solid color-mix(in srgb, var(--amber) 55%, var(--accent));
+  background: color-mix(in srgb, var(--amber) 38%, #2a2218);
   color: var(--text);
   font-size: 0.6875rem;
   font-weight: 500;

@@ -118,6 +118,9 @@ export type Dictionary = {
       statusSuccessWhatsapp: string;
       statusError: string;
       statusNotConfigured: string;
+      scheduleTitle: string;
+      scheduleHint: string;
+      scheduleOpen: string;
     };
   };
   cv: CvPageContent;

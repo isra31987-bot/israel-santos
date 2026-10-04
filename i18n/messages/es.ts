@@ -45,7 +45,7 @@ export const es: Dictionary = {
   homeClosing: {
     value: {
       label: "QUÉ PUEDO APORTAR",
-      heading: ["A TU EMPRESA.", "NO SOLO AL CÓDIGO."],
+      heading: ["SOLUCIONES REALES", "PARA PROCESOS REALES"],
       supporting:
         "Combino experiencia real en operaciones con capacidad para analizar procesos, detectar fricción y construir soluciones digitales prácticas.",
       items: [
@@ -171,6 +171,10 @@ export const es: Dictionary = {
       statusError: "No se pudo enviar. Prueba de nuevo o escríbeme por email.",
       statusNotConfigured:
         "El envío por email aún no está configurado en el servidor. Usa WhatsApp o el email directo.",
+      scheduleTitle: "¿Prefieres agendar directamente?",
+      scheduleHint:
+        "Elige un hueco en el calendario. También puedes seguir enviando el mensaje abajo.",
+      scheduleOpen: "Abrir calendario →",
     },
   },
   cv: cvPageEs,

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { CAL_COM_EMBED_URL, CAL_COM_URL } from "@/data/site";
 import type { Dictionary } from "@/i18n/types";
 
 type Channel = "email" | "whatsapp";
@@ -14,6 +15,10 @@ type Props = {
   labels: Dictionary["contact"]["form"];
 };
 
+// Palabras que revelan el calendario (ES/EN, con y sin acentos)
+const SCHEDULE_KEYWORDS =
+  /\b(entrevista|agendar|agenda|cita|reunion|reunión|meeting|call|calendario|calendar|disponibilidad|availability|videollamada|llamar)\b/i;
+
 export default function ContactForm({
   whatsappNumber,
   emailSubject,
@@ -25,6 +30,14 @@ export default function ContactForm({
   const [channel, setChannel] = useState<Channel>("email");
   const [status, setStatus] = useState<Status>("idle");
   const [errorKey, setErrorKey] = useState<string | null>(null);
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  // Si el mensaje sugiere agendar, revelamos Cal.com (se mantiene visible)
+  useEffect(() => {
+    if (SCHEDULE_KEYWORDS.test(message)) {
+      setShowCalendar(true);
+    }
+  }, [message]);
 
   function buildWhatsappText() {
     const lines = [
@@ -179,6 +192,29 @@ export default function ContactForm({
           disabled={status === "sending"}
         />
       </div>
+
+      {showCalendar && (
+        <div className="contact-calendar" aria-live="polite">
+          <p className="contact-calendar-title">{labels.scheduleTitle}</p>
+          <p className="contact-calendar-hint">{labels.scheduleHint}</p>
+          <div className="contact-calendar-frame-wrap">
+            <iframe
+              title={labels.scheduleTitle}
+              src={CAL_COM_EMBED_URL}
+              className="contact-calendar-frame"
+              loading="lazy"
+            />
+          </div>
+          <a
+            href={CAL_COM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-calendar-link"
+          >
+            {labels.scheduleOpen}
+          </a>
+        </div>
+      )}
 
       <fieldset className="contact-form-channel">
         <legend>{labels.channelLabel}</legend>

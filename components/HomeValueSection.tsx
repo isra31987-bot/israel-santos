@@ -14,25 +14,28 @@ export default function HomeValueSection() {
       className="home-value-section border-t border-line"
       aria-labelledby="home-value-heading"
     >
-      <div className="mx-auto w-full max-w-6xl px-6 py-24 lg:py-32">
-        <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase">
+      <div className="home-value-inner mx-auto w-full max-w-6xl px-6 py-24 lg:py-32">
+        <p className="home-value-label text-xs font-medium tracking-[0.2em] text-accent uppercase">
           {t.label}
         </p>
-        <h2
-          id="home-value-heading"
-          className="mt-4 text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]"
-        >
-          {t.heading[0]}
-          <br />
-          {t.heading[1]}
+
+        <h2 id="home-value-heading" className="home-value-heading">
+          {t.heading.map((line) => (
+            <span key={line} className="home-value-heading-line">
+              {line}
+            </span>
+          ))}
         </h2>
-        <p className="mt-6 max-w-2xl leading-relaxed text-muted">{t.supporting}</p>
-        <ul className="home-value-list mt-10">
+
+        <p className="home-value-supporting">{t.supporting}</p>
+
+        <ul className="home-value-list">
           {t.items.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+
+        <div className="home-value-ctas">
           <TrackLink
             href="/contact"
             event="contact_click"

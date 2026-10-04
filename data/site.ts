@@ -11,3 +11,7 @@ export const CV_PDF_HREF = "/cv.pdf";
 
 /** Página CV web (imprimir con Ctrl+P) */
 export const CV_PAGE_HREF = "/cv";
+
+/** Cal.com — agenda pública (contacto / entrevistas) */
+export const CAL_COM_URL = "https://cal.com/israel-santos-lopez-mozdgo";
+export const CAL_COM_EMBED_URL = `${CAL_COM_URL}?embed=true`;
