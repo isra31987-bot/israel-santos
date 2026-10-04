@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnalyticsGate from "@/components/AnalyticsGate";
@@ -70,6 +71,8 @@ export default async function RootLayout({
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
           <RecruitmentChat />
+          {/* Vercel Web Analytics — privacy-friendly, sin cookies de terceros */}
+          <Analytics />
         </DictionaryProvider>
       </body>
     </html>
